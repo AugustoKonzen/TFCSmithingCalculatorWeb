@@ -2,7 +2,7 @@
 
 A tool to assist players in the **Terrafirmacraft** mod by calculating the correct forging sequences and alloy compositions. This ensures that players can successfully forge and smelt alloys without trial and error.
 
-🔗 **Access the tool here:** <a href="https://augustokonzen.github.io/TFCSmithingCalculatorWeb/" target="_blank">TFC Smithing Calculator on GitHub Pages</a>
+🔗 **Access the tool here:** <a href="https://augustokonzen.github.io/TFCSmithingCalculatorWeb/" target="_blank">TFC Smithing Calculator</a>
 
 ## Features 🚀
 
