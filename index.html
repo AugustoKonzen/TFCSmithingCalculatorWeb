@@ -80,6 +80,8 @@
         </div>
 
         <button id="runSequence">Calculate Sequence</button>
+        <p id="forgeErrorMessage" class="error-message">You must select at least two actions to calculate the forging sequence!</p>
+
         <pre id="output"></pre>
 
         <div class="section-divider"></div>
@@ -160,6 +162,14 @@
             const secondAction = Number(document.getElementById('secondAction').value);
             const thirdAction = Number(document.getElementById('thirdAction').value);
 
+            if (secondAction === 0 || thirdAction === 0) {
+                forgeErrorMessage.style.display = "block";
+                document.getElementById("output").textContent = '';
+                return;
+            } else {
+                forgeErrorMessage.style.display = "none";
+            }
+
             let sequence = null;
             if (firstAction === 0) {
                 sequence = getSequence(secondAction, thirdAction);
@@ -220,6 +230,8 @@
 
         if (validIngots.length < 2) {
             errorMessage.style.display = "block";
+            document.getElementById("totalIngots").textContent = '0';
+            document.getElementById("alloyComposition").textContent = '-';
             return;
         } else {
             errorMessage.style.display = "none";

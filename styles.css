@@ -196,7 +196,8 @@ button#calculateAlloy:hover {
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
-    display: none; /* Inicialmente oculta */
+    display: none;
+    text-align: center;
 }
 
 /* =========== TUTORIAL =========== */
