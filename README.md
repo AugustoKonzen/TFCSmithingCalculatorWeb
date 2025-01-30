@@ -15,15 +15,21 @@ Follow the system-calculated sequence to forge items correctly.
 Features 🚀
 
 ✅ Simple and intuitive interface.
+
 ✅ Step-by-step forging sequence calculation.
+
 ✅ Visual guide with images for better understanding.
+
 ✅ Works entirely in the browser, no installations required.
 
 How to Use 🛠
 
 1️⃣ Select three actions from the dropdown menus.
+
 2️⃣ Click "Calculate Sequence" to calculate the optimal smithing order.
+
 3️⃣ Make sure the two forging indicators in the game are aligned.
+
 4️⃣ Follow the provided sequence to successfully forge the item.
 
 Hosting & Deployment 🌍
