@@ -1,0 +1,205 @@
+html, body {
+    background-color: #1e1e1e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.global-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.action-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.action-box img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    visibility: hidden;
+}
+
+.action-box select {
+    margin-top: 10px;
+    width: 160px;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #007ACC, #005F99);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
+    appearance: none;
+}
+
+.action-box select:hover {
+    background: linear-gradient(135deg, #0094FF, #007ACC);
+    transform: scale(1.05);
+}
+
+.action-box select:active {
+    transform: scale(0.98);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.action-box select option {
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: none;
+}
+
+.action-box select option:hover {
+    background-color: #007ACC;
+    color: white;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #007ACC, #005F99);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0094FF, #007ACC);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    word-wrap: break-word;
+}
+
+/* =========== TUTORIAL =========== */
+.tutorial-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #007ACC, #005F99);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tutorial-btn:hover {
+    background: linear-gradient(135deg, #0094FF, #007ACC);
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 700px;
+    max-height: 80vh;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.tutorial-img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff4444;
+}
