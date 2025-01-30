@@ -24,7 +24,7 @@
 
 <ol>
   <li>🔹 Select three actions from the dropdown menus.</li>
-  <li>🔹 Click <strong>"Calculate Sequence"</strong> to compute the optimal smithing order.</li>
+  <li>🔹 Click <strong>"Get Sequence"</strong> to compute the optimal smithing order.</li>
   <li>🔹 Make sure the two forging indicators in the game are aligned.</li>
   <li>🔹 Follow the provided sequence to successfully forge the item.</li>
 </ol>
