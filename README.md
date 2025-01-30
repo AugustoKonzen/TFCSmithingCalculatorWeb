@@ -69,7 +69,8 @@ Contributions are welcome! If you want to add a new language, follow these steps
    ```
    Example: `feature/internationalization_french`
 3. Add a new JSON file in the `i18n` directory with the translated content.
-4. Open a **Merge Request (MR)** to the `main` branch.
+4. Add the new language to the language selector in index.html
+5. Open a **Merge Request (MR)** to the `main` branch.
 
 **Note:** The `main` branch is protected, meaning only the repository owner can merge directly. All contributions must go through a review process.
 
