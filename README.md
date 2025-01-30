@@ -1,48 +1,45 @@
-Forge Sequence Calculator 🔨🔥
+<h1 align="center">Forge Sequence Calculator 🔨🔥</h1>
 
-About the Project
+## About the Project
 
-This project is a Forge Sequence Calculator designed to help players of the Terrafirmacraft mod for Minecraft. The mod features a complex blacksmithing system, and this tool provides an optimized sequence to successfully forge items.
+<p>This project is a <strong>Forge Sequence Calculator</strong> designed to help players of the <strong>Terrafirmacraft</strong> mod for Minecraft. The mod features a complex blacksmithing system, and this tool provides an optimized sequence to successfully forge items.</p>
 
-With this calculator, you can:
+<p>With this calculator, you can:</p>
+<ul>
+  <li>✅ Select the exact same actions as in the game.</li>
+  <li>✅ Ensure the two forging indicators are aligned.</li>
+  <li>✅ Follow the system-calculated sequence to forge items correctly.</li>
+</ul>
 
-Select the exact same actions as in the game.
+## Features 🚀
 
-Ensure the two forging indicators are aligned.
+<ul>
+  <li>✅ <strong>Simple and intuitive interface.</strong></li>
+  <li>✅ <strong>Step-by-step forging sequence calculation.</strong></li>
+  <li>✅ <strong>Visual guide with images for better understanding.</strong></li>
+  <li>✅ <strong>Works entirely in the browser, no installations required.</strong></li>
+</ul>
 
-Follow the system-calculated sequence to forge items correctly.
+## How to Use 🛠
 
-Features 🚀
+<ol>
+  <li>🔹 Select three actions from the dropdown menus.</li>
+  <li>🔹 Click <strong>"Calculate Sequence"</strong> to compute the optimal smithing order.</li>
+  <li>🔹 Make sure the two forging indicators in the game are aligned.</li>
+  <li>🔹 Follow the provided sequence to successfully forge the item.</li>
+</ol>
 
-✅ Simple and intuitive interface.
+## Hosting & Deployment 🌍
 
-✅ Step-by-step forging sequence calculation.
+<p>This project is hosted on <strong>GitHub Pages</strong>, making it free and accessible to anyone. You can use the tool directly without any downloads.</p>
 
-✅ Visual guide with images for better understanding.
+## Contribution 🤝
 
-✅ Works entirely in the browser, no installations required.
+<p>If you’d like to improve this project, feel free to fork the repository and submit a pull request. Contributions are always welcome!</p>
 
-How to Use 🛠
+## License 📜
 
-1️⃣ Select three actions from the dropdown menus.
+<p>This project is open-source and available for anyone to use or modify.</p>
 
-2️⃣ Click "Calculate Sequence" to calculate the optimal smithing order.
-
-3️⃣ Make sure the two forging indicators in the game are aligned.
-
-4️⃣ Follow the provided sequence to successfully forge the item.
-
-Hosting & Deployment 🌍
-
-This project is hosted on GitHub Pages, making it free and accessible to anyone. You can use the tool directly without any downloads.
-
-Contribution 🤝
-
-If you’d like to improve this project, feel free to fork the repository and submit a pull request. Contributions are always welcome!
-
-License 📜
-
-This project is open-source and available for anyone to use or modify.
-
-Happy forging! 🔨🔥
+<p align="center"><strong>Happy forging! 🔨🔥</strong></p>
 
