@@ -23,10 +23,10 @@
 ## How to Use 🛠
 
 <ol>
-  <li>🔹 Select three actions from the dropdown menus.</li>
-  <li>🔹 Click <strong>"Get Sequence"</strong> to compute the optimal smithing order.</li>
-  <li>🔹 Make sure the two forging indicators in the game are aligned.</li>
-  <li>🔹 Follow the provided sequence to successfully forge the item.</li>
+  <li>1️⃣ Select three actions from the dropdown menus.</li>
+  <li>2️⃣ Click <strong>"Get Sequence"</strong> to compute the optimal smithing order.</li>
+  <li>3️⃣ Make sure the two forging indicators in the game are aligned.</li>
+  <li>4️⃣ Follow the provided sequence to successfully forge the item.</li>
 </ol>
 
 ## Hosting & Deployment 🌍
