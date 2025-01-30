@@ -45,7 +45,7 @@
 
                 <div class="section-divider"></div>
         
-                <h3 i18n="tutorial.alloy_section.title">Alloy Calculator 🔥</h3>
+                <h3 data-i18n="tutorial.alloy_section.title">Alloy Calculator 🔥</h3>
                 <img src="img/alloy_calculator.png" alt="Alloy Calculator" class="tutorial-img">
                 <p data-i18n="tutorial.alloy_section.ores_description">
                     The Alloy Calculator helps you determine the total number of ingots produced and the metal composition 
@@ -147,7 +147,7 @@
                         const translation = getNestedTranslation(translations, key);
 
                         if (translation) {
-                            element.innerHTML = translation; // Substitui mantendo formatação HTML
+                            element.innerHTML = translation;
                         }
                     });
 
