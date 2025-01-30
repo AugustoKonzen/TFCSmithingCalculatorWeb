@@ -1,0 +1,38 @@
+{
+    "global_title": "Calculadora de Forja do TFC",
+    "tutorial": {
+        "tutorial_btn": "Como Usar",
+        "title": "Como Usar",
+        "forge_section": {
+            "title": "Processo de Forja 🔨",
+            "start_forging": "Antes de iniciar o processo de forja, você deve alinhar os dois indicadores mostrados nos círculos vermelhos.\nIndependentemente da sequência selecionada, a forja falhará se esses pontos não estiverem alinhados.",
+            "alligned_points": "Quando os dois indicadores estiverem perfeitamente alinhados, você poderá seguir a sequência calculada passo a passo.\nO sistema determina a ordem ideal de ações necessárias para forjar o item com sucesso.",
+            "output": "Selecione exatamente as mesmas ações mostradas no jogo, alinhe os pontos e aplique a sequência\n gerada por este sistema. Se seguido corretamente, o processo de forja será bem-sucedido."
+        },
+        "alloy_section": {
+            "title": "Calculadora de Ligas 🔥",
+            "ores_description": "A Calculadora de Ligas ajuda a determinar o número total de lingotes produzidos e a composição metálica\ncom base nos lingotes utilizados no processo de fusão.",
+            "important": "<strong>Importante:</strong> Esta ferramenta calcula <u>lingotes</u>, e não os pedaços brutos de minério que você minera no jogo.",
+            "chunks_description": "Ao minerar minérios como Malachite (para cobre), você obtém pedaços de minério, que podem ter qualidade Pobre (Poor), Normal (Normal) ou Rica (Rich).\nCada pedaço fornece diferentes quantidades de metal fundido. O processo de fusão requer a reunião de uma quantidade suficiente\ndesses pedaços para formar lingotes completos.",
+            "footer": "Use esta calculadora para determinar a composição final da liga assim que tiver a quantidade necessária de lingotes."
+        }
+    },
+    "forge_section": {
+        "title": "Processo de Forja 🔨",
+        "calculate_sequence_btn": "Calcular Sequência",
+        "error_message": "Você deve selecionar pelo menos duas ações para calcular a sequência de forja!"
+    },
+    "alloy_section": {
+        "title": "Calculadora de Ligas 🔥",
+        "input_title": "Composição da Liga Metálica",
+        "input_description": "Insira o número de lingotes usados para cada metal a fim de calcular a composição da liga.",
+        "ingot_1": "Lingote 1:",
+        "ingot_2": "Lingote 2:",
+        "ingot_3": "Lingote 3:",
+        "ingot_4": "Lingote 4:",
+        "calculate_alloy_btn": "Calcular Liga",
+        "error_message": "Por favor, insira pelo menos dois valores diferentes de lingotes para criar uma liga.",
+        "result_total": "<strong>Total de Lingotes:</strong> <span id='totalIngots'>0</span>",
+        "result_composition": "<strong>Composição:</strong> <span id='alloyComposition'>-</span>"
+    }
+}
