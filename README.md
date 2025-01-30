@@ -2,12 +2,13 @@
 
 A tool to assist players in the **Terrafirmacraft** mod by calculating the correct forging sequences and alloy compositions. This ensures that players can successfully forge and smelt alloys without trial and error.
 
-🔗 **Access the tool here:** <a href="https://augustokonzen.github.io/TFCSmithingCalculatorWeb/" target="_blank">TFC Smithing Calculator</a>
+🔗 **Access the tool here:** [TFC Smithing Calculator](https://augustokonzen.github.io/TFCSmithingCalculatorWeb/)
 
 ## Features 🚀
 
 - ✅ **Forging Calculator** – Determines the correct sequence of actions to forge an item.
 - ✅ **Alloy Calculator** – Calculates the ingot composition for metal alloys.
+- ✅ **Multilingual Support** – Supports multiple languages (currently English, Portuguese, and Spanish).
 - ✅ **Intuitive UI** – Simple, clean, and easy to use.
 - ✅ **Fully Responsive** – Works on desktops and mobile devices.
 - ✅ **In-depth Tutorial** – Guides players step by step in using the tool.
@@ -48,6 +49,32 @@ A tool to assist players in the **Terrafirmacraft** mod by calculating the corre
 
 ---
 
+## Internationalization 🌍
+
+This project supports multiple languages, with translations currently available in:
+- 🇺🇸 **English**
+- 🇧🇷 **Portuguese (Brazil)**
+- 🇪🇸 **Spanish (Spain)**
+
+All translations were generated using **ChatGPT-4 (Premium)** to ensure accuracy. If you find any issues with the translations or would like to contribute with another language, follow the contribution guidelines below.
+
+## Contribution 🤝
+
+Contributions are welcome! If you want to add a new language, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with the format:
+   ```
+   feature/internationalization_{language}
+   ```
+   Example: `feature/internationalization_french`
+3. Add a new JSON file in the `i18n` directory with the translated content.
+4. Open a **Merge Request (MR)** to the `main` branch.
+
+**Note:** The `main` branch is protected, meaning only the repository owner can merge directly. All contributions must go through a review process.
+
+---
+
 ## Hosting & Deployment 🌍
 
 This project is hosted via **GitHub Pages**. To update the live version:
@@ -60,12 +87,6 @@ git push origin main
 
 ---
 
-## Contribution 🤝
-
-Contributions are welcome! Feel free to submit **issues** or **pull requests** to improve the tool.
-
----
-
 ## License 📜
 
 This project is licensed under the **MIT License** – feel free to modify and share!
@@ -73,3 +94,4 @@ This project is licensed under the **MIT License** – feel free to modify and s
 ---
 
 💡 Built with love for **Terrafirmacraft** players. Happy forging and smelting! 🔥🛠
+

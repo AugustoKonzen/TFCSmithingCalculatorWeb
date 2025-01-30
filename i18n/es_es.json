@@ -1,0 +1,38 @@
+{
+    "global_title": "Calculadora de Forja de TFC",
+    "tutorial": {
+        "tutorial_btn": "Cómo Usar",
+        "title": "Cómo Usar",
+        "forge_section": {
+            "title": "Proceso de Forja 🔨",
+            "start_forging": "Antes de comenzar el proceso de forja, debes alinear los dos indicadores que se muestran en los círculos rojos.\nIndependientemente de la secuencia seleccionada, la forja fallará si estos puntos no están alineados.",
+            "alligned_points": "Una vez que los dos indicadores estén perfectamente alineados, puedes seguir la secuencia calculada paso a paso.\nEl sistema determina el orden óptimo de acciones necesarias para forjar el objeto con éxito.",
+            "output": "Selecciona exactamente las mismas acciones que aparecen en el juego, alinea los puntos y aplica la secuencia \ngenerada por este sistema. Si se sigue correctamente, el proceso de forja tendrá éxito."
+        },
+        "alloy_section": {
+            "title": "Calculadora de Aleaciones 🔥",
+            "ores_description": "La Calculadora de Aleaciones te ayuda a determinar la cantidad total de lingotes producidos y la composición del metal \nbasándose en los lingotes que utilizas en el proceso de fundición.",
+            "important": "<strong>Importante:</strong> Esta herramienta calcula <u>lingotes</u>, no los trozos de mineral en bruto que extraes en el juego.",
+            "chunks_description": "Cuando extraes minerales como Malachite (para cobre), obtienes trozos de mineral que pueden ser de calidad Pobre (Poor), Normal (Normal) o Rica (Rich).\nCada pieza proporciona diferentes cantidades de metal fundido. El proceso de fundición requiere reunir suficiente metal de \nestos fragmentos para formar lingotes completos.",
+            "footer": "Utiliza esta calculadora para determinar la composición final de los lingotes una vez que tengas la cantidad necesaria."
+        }
+    },
+    "forge_section": {
+        "title": "Proceso de Forja 🔨",
+        "calculate_sequence_btn": "Calcular Secuencia",
+        "error_message": "¡Debes seleccionar al menos dos acciones para calcular la secuencia de forja!"
+    },
+    "alloy_section": {
+        "title": "Calculadora de Aleaciones 🔥",
+        "input_title": "Composición de la Aleación Metálica",
+        "input_description": "Introduce el número de lingotes utilizados para cada metal con el fin de calcular la composición de la aleación.",
+        "ingot_1": "Lingote 1:",
+        "ingot_2": "Lingote 2:",
+        "ingot_3": "Lingote 3:",
+        "ingot_4": "Lingote 4:",
+        "calculate_alloy_btn": "Calcular Aleación",
+        "error_message": "Por favor, introduce al menos dos valores de lingotes diferentes para crear una aleación.",
+        "result_total": "<strong>Total de Lingotes:</strong> <span id='totalIngots'>0</span>",
+        "result_composition": "<strong>Composición:</strong> <span id='alloyComposition'>-</span>"
+    }
+}
