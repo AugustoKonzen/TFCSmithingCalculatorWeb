@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TFC Smithing Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
@@ -235,8 +235,8 @@
     </script>
 
     <script type="module">
-        import { getSequence } from './CalculateSequence.js';
-        import ActionsEnum from './Actions.js';
+        import { getSequence } from './assets/js/CalculateSequence.js';
+        import ActionsEnum from './assets/js/Actions.js';
 
         const actions = ActionsEnum.getComboActions();
         populateSelects('firstAction', 'firstImg');
