@@ -13,7 +13,7 @@ A tool to assist players in the **Terrafirmacraft** mod by calculating the corre
 - ✅ **Fully Responsive** – Works on desktops and mobile devices.
 - ✅ **In-depth Tutorial** – Guides players step by step in using the tool.
 
-## How to Use 🛠
+## How to Use 🧐
 
 ### **Forging Process 🔨**
 
@@ -52,7 +52,7 @@ A tool to assist players in the **Terrafirmacraft** mod by calculating the corre
 ## Internationalization 🌍
 
 This project supports multiple languages, with translations currently available in:
-- 🇺🇸 **English**
+- 🇦🇺 **English**
 - 🇧🇷 **Portuguese (Brazil)**
 - 🇪🇸 **Spanish (Spain)**
 
@@ -70,7 +70,7 @@ Contributions are welcome! If you want to add a new language, follow these steps
    Example: `feature/internationalization_french`
 3. Add a new JSON file in the `i18n` directory with the translated content.
 4. Add the new language to the language selector in `index.html`
-5. Open a **Merge Request (MR)** to the `main` branch.
+5. Open a **Pull Request (PR)** to the `main` branch.
 
 **Note:** The `main` branch is protected, meaning only the repository owner can merge directly. All contributions must go through a review process.
 
@@ -78,21 +78,30 @@ Contributions are welcome! If you want to add a new language, follow these steps
 
 ## Hosting & Deployment 🌍
 
-This project is hosted via **GitHub Pages**. To update the live version:
+This project is hosted via **GitHub Pages**. To update the live version, follow these steps:
 
-```sh
-git add .
-git commit -m "Update site"
-git push origin main
-```
+1. Create a new branch with the format:
+   ```
+   feature/{branch_name}
+   ```
+   Example: `feature/update_ui`
+2. Make the necessary changes and commit them.
+3. Push the branch to the repository:
+   ```sh
+   git push origin feature/{branch_name}
+   ```
+4. Open a **Pull Request (PR)** to merge into the `main` branch.
+5. The repository owner will review and approve the changes before merging.
+
+**Important:** The `main` branch is protected, and only the repository owner can modify it directly.
 
 ---
 
-## License 📜
+## License 📛
 
 This project is licensed under the **MIT License** – feel free to modify and share!
 
 ---
 
-💡 Built with love for **Terrafirmacraft** players. Happy forging and smelting! 🔥🛠
+💡 Built with love for **Terrafirmacraft** players. Happy forging and smelting! 🔥🔨
 
