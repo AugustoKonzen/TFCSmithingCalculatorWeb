@@ -74,6 +74,8 @@ Contributions are welcome! If you want to add a new language, follow these steps
 
 **Note:** The `main` branch is protected, meaning only the repository owner can merge directly. All contributions must go through a review process.
 
+**Important:** Any branch that does not follow the `feature/{branch_name}` format will be rejected to ensure project organization.
+
 ---
 
 ## Hosting & Deployment 🌍
@@ -94,6 +96,8 @@ This project is hosted via **GitHub Pages**. To update the live version, follow 
 5. The repository owner will review and approve the changes before merging.
 
 **Important:** The `main` branch is protected, and only the repository owner can modify it directly.
+
+**Note:** Any branch that does not follow the `feature/{branch_name}` format will be rejected to ensure project organization.
 
 ---
 
