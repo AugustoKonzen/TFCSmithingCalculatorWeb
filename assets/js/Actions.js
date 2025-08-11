@@ -1,7 +1,7 @@
 const ActionsEnum = {
     LIGHT_HIT: -3,
     MEDIUM_HIT: -6,
-    HEAVY_HIT: -9,
+    HARD_HIT: -9,
     DRAW: -15,
     PUNCH: 2,
     BEND: 7,
