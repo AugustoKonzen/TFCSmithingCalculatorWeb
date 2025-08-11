@@ -1,0 +1,7 @@
+name: Allow Manual Deploy
+
+on:
+  workflow_dispatch: # permite rodar manualmente
+  push:
+    branches:
+      - main
