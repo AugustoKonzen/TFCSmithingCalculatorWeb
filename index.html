@@ -137,7 +137,7 @@
         </div>
 
         <button id="openFeedbackBtn" class="btn" data-i18n="feedback.openButton">
-            Send a message
+            Contact us
         </button>
 
         <dialog id="feedbackModal" class="feedback-modal" aria-labelledby="feedbackTitle">
@@ -148,7 +148,6 @@
 
         <p class="modal-subtitle" data-i18n="feedback.subtitle">How would you like to send it?</p>
 
-        <!-- Formulário visível por padrão -->
         <form id="feedbackForm" action="https://tfcsmithingcalculator.augustoikonzen.workers.dev/send" method="POST" class="feedback-form" novalidate>
             <label class="field">
             <span data-i18n="feedback.form.email">Your email</span>
@@ -174,10 +173,8 @@
             <small class="field-error" data-i18n="feedback.form.errors.message" hidden>Please write your message.</small>
             </label>
 
-            <!-- Anti-spam + contexto -->
+            <!-- Anti-spam -->
             <input type="text" name="_gotcha" style="display:none">
-            <input type="hidden" name="page_lang" id="feedbackLang">
-            <input type="hidden" name="app_version" id="feedbackVersion" value="">
 
             <div class="form-actions">
             <button type="submit" class="btn" data-i18n="feedback.form.send">Send</button>
@@ -187,7 +184,6 @@
             <p id="feedbackStatus" class="status" role="status" aria-live="polite"></p>
         </form>
 
-        <!-- placeholders invisíveis para textos dinâmicos já traduzidos -->
         <p id="i18n_sending" class="visually-hidden" data-i18n="feedback.form.sending">Sending…</p>
         <p id="i18n_success" class="visually-hidden" data-i18n="feedback.form.success">Thanks! Received successfully.</p>
         <p id="i18n_error"   class="visually-hidden" data-i18n="feedback.form.error">Oops, something went wrong. Please try again later.</p>
@@ -203,27 +199,16 @@
             const form = $('#feedbackForm');
             const cancelFormBtn = $('#cancelFormBtn');
             const statusEl = $('#feedbackStatus');
-            const langEl = $('#feedbackLang');
-            const versionEl = $('#feedbackVersion');
 
-            // textos já traduzidos (seu script de i18n preencherá esses elementos)
             const T = {
                 sending: $('#i18n_sending'),
                 success: $('#i18n_success'),
                 error: $('#i18n_error')
             };
 
-            // set context
-            try {
-                langEl.value = document.documentElement.lang || (window.currentLanguage || 'en');
-                versionEl.value = (window.APP_VERSION || '');
-            } catch (e) { }
-
-            // abrir/fechar modal
             openBtn?.addEventListener('click', () => {
                 if (typeof modal.showModal === 'function') modal.showModal();
                 else modal.setAttribute('open', '');
-                // limpar status/erros ao abrir
                 clearStatus();
                 clearErrors();
                 form.reset();
@@ -232,7 +217,6 @@
             modal?.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
             cancelFormBtn?.addEventListener('click', () => { form.reset(); clearStatus(); clearErrors(); modal.close(); });
 
-            // validação de campos (HTML5 + mensagens)
             form?.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 clearStatus();
@@ -244,17 +228,16 @@
 
                 let valid = true;
 
-                // e-mail
                 if (!email.value || !email.checkValidity()) {
                     showError(email, email.closest('.field')?.querySelector('.field-error'));
                     valid = false;
                 }
-                // tópico
+
                 if (!topic.value) {
                     showError(topic, topic.closest('.field')?.querySelector('.field-error'));
                     valid = false;
                 }
-                // mensagem
+
                 if (!message.value || !message.value.trim()) {
                     showError(message, message.closest('.field')?.querySelector('.field-error'));
                     valid = false;
