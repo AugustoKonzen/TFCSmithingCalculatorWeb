@@ -37,7 +37,7 @@
         "result_composition": "<strong>Composición:</strong> <span id='alloyComposition'>-</span>"
     },
     "feedback": {
-        "openButton": "Enviar mensaje",
+        "openButton": "Contacta con nosotros",
         "title": "Preguntas o Sugerencias",
         "subtitle": "Completa el formulario y te responderemos.",
         "viaForm": "Enviar por formulario (correo)",
