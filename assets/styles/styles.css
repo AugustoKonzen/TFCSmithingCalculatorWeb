@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     background-color: #1e1e1e;
     color: white;
     margin: 0;
@@ -18,6 +19,55 @@ html, body {
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 100%;
+}
+
+/* =========== HEADER (STICKY) =========== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 12px;
+    padding: 12px 16px;
+    background: #222;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+.site-header h1 {
+    grid-column: 2;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.site-header .header-controls {
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+}
+
+.light-mode .site-header {
+    background: #f5f5f5;
+    color: #000;
+    border-bottom: 1px solid #dcdcdc;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+}
+
+@media (max-width: 480px) {
+    .site-header h1 {
+        font-size: 20px;
+    }
 }
 
 .container {
@@ -54,7 +104,7 @@ html, body {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     appearance: none;
 }
 
@@ -125,7 +175,7 @@ button:active {
     word-wrap: break-word;
 }
 
-/* =========== ALLOY CALCULATOR ===========  */
+/* =========== ALLOY CALCULATOR =========== */
 .alloy-container {
     background: #222;
     padding: 20px;
@@ -310,17 +360,6 @@ button#calculateAlloy:hover {
     display: inline-block;
 }
 
-.language-options {
-    position: absolute;
-    right: 0;
-    top: 100%;
-}
-
-.language-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
 #languageButton {
     display: flex;
     align-items: center;
@@ -481,4 +520,197 @@ button#calculateAlloy:hover {
     height: 2px;
     background: linear-gradient(to right, transparent, #ffcc00, transparent);
     margin: 30px 0;
+}
+
+/* =========== FEEDBACK MODAL =========== */
+dialog.feedback-modal {
+    width: min(92vw, 680px);
+    max-width: 680px;
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    background-color: #202224;
+    color: #eaecef;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .65);
+    overflow: hidden;
+}
+
+.feedback-modal * {
+    box-sizing: border-box;
+}
+
+.feedback-modal::backdrop {
+    background: rgba(0, 0, 0, .6);
+}
+
+.feedback-modal .modal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.feedback-modal .modal-header h2 {
+    margin: 0;
+}
+
+.feedback-modal .modal-close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 22px;
+    line-height: 1;
+    padding: 6px;
+    cursor: pointer;
+    opacity: .85;
+}
+
+.feedback-modal .modal-close:hover {
+    opacity: 1;
+}
+
+.feedback-modal .modal-subtitle {
+    padding: 12px 20px 0 20px;
+    opacity: .85;
+    text-align: center;
+}
+
+.feedback-form {
+    padding: 10px 20px 20px 20px;
+}
+
+.feedback-form .field {
+    display: grid;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    max-width: 100%;
+    background-color: #17181a;
+    color: #eaecef;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 8px;
+    padding: 10px 12px;
+    outline: none;
+    font-size: .95rem;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: rgba(255, 255, 255, .45);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: .95rem;
+    opacity: .9;
+    text-align: center;
+}
+
+.field-error {
+    color: #ff6b6b;
+    font-size: .9rem;
+}
+
+.field-invalid {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, .15);
+}
+
+.light-mode dialog.feedback-modal {
+    background-color: #ffffff;
+    color: #1e1e1e;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
+}
+
+.light-mode .feedback-modal .modal-header {
+    border-bottom-color: rgba(0, 0, 0, .08);
+}
+
+.light-mode .feedback-form input,
+.light-mode .feedback-form select,
+.light-mode .feedback-form textarea {
+    background-color: #ffffff;
+    color: #1e1e1e;
+    border-color: rgba(0, 0, 0, .25);
+}
+
+.light-mode .feedback-form input:focus,
+.light-mode .feedback-form select:focus,
+.light-mode .feedback-form textarea:focus {
+    border-color: rgba(0, 0, 0, .45);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#i18n_sending,
+#i18n_success,
+#i18n_error {
+    display: none;
+}
+
+.feedback-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #17181a !important;
+    color: #eaecef !important;
+    border: 1px solid rgba(255, 255, 255, .22) !important;
+    padding-right: 36px;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    box-shadow: none;
+    transition: none;
+}
+
+.feedback-form select:hover,
+.feedback-form select:focus {
+    background-color: #17181a !important;
+}
+
+.light-mode .feedback-form select {
+    background-color: #ffffff !important;
+    color: #1e1e1e !important;
+    border-color: rgba(0, 0, 0, .25) !important;
+}
+
+.light-mode .feedback-form select:hover,
+.light-mode .feedback-form select:focus {
+    background-color: #ffffff !important;
+}
+
+.feedback-form textarea {
+    height: 160px;
+    resize: none;
+    overflow-y: auto;
 }

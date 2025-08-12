@@ -35,5 +35,33 @@
         "error_message": "Por favor, introduce al menos dos valores de lingotes diferentes para crear una aleación.",
         "result_total": "<strong>Total de Lingotes:</strong> <span id='totalIngots'>0</span>",
         "result_composition": "<strong>Composición:</strong> <span id='alloyComposition'>-</span>"
+    },
+    "feedback": {
+        "openButton": "Enviar mensaje",
+        "title": "Preguntas o Sugerencias",
+        "subtitle": "Completa el formulario y te responderemos.",
+        "viaForm": "Enviar por formulario (correo)",
+        "form": {
+            "email": "Tu correo",
+            "topic": "Tema",
+            "topics": {
+                "_select": "Selecciona…",
+                "question": "Pregunta",
+                "suggestion": "Sugerencia",
+                "bug": "Error",
+                "translation": "Traducción"
+            },
+            "message": "Mensaje",
+            "send": "Enviar",
+            "cancel": "Cancelar",
+            "sending": "Enviando…",
+            "success": "¡Gracias! Recibido correctamente.",
+            "error": "Vaya, algo salió mal. Inténtalo de nuevo más tarde.",
+            "errors": {
+                "email": "Introduce un correo válido.",
+                "topic": "Elige un tema.",
+                "message": "Escribe tu mensaje."
+            }
+        }
     }
 }
