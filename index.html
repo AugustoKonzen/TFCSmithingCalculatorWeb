@@ -9,23 +9,26 @@
 </head>
 <body>
     <div class="global-container">
-        <h1 data-i18n="global_title">TFC Smithing Calculator</h1>
-        <div class="header-controls">
-            <div class="language-dropdown">
-                <button id="languageButton" data-i18n="language_title">
-                    Language <span class="globe">🌐</span>
+        <header class="site-header">
+            <h1 data-i18n="global_title">TFC Smithing Calculator</h1>
+        
+            <div class="header-controls">
+                <div class="language-dropdown">
+                    <button id="languageButton" data-i18n="language_title">
+                        Language <span class="globe">🌐</span>
+                    </button>
+                    <ul class="language-options">
+                        <li data-lang="en_us">English</li>
+                        <li data-lang="pt_br">Português</li>
+                        <li data-lang="es_es">Español</li>
+                    </ul>
+                </div>
+                <button id="howToUseBtn" class="tutorial-btn" data-i18n="tutorial.tutorial_btn">How to Use</button>
+                <button id="themeToggle">
+                    <img id="themeIcon" src="img/dark_theme.png" alt="Theme Icon">
                 </button>
-                <ul class="language-options">
-                    <li data-lang="en_us">English</li>
-                    <li data-lang="pt_br">Português</li>
-                    <li data-lang="es_es">Español</li>
-                </ul>
-            </div>          
-            <button id="howToUseBtn" class="tutorial-btn" data-i18n="tutorial.tutorial_btn">How to Use</button>
-            <button id="themeToggle">
-                <img id="themeIcon" src="img/dark_theme.png" alt="Theme Icon">
-            </button>
-        </div>
+            </div>
+        </header>
 
         <div id="tutorialModal" class="modal">
             <div class="modal-content">
@@ -132,7 +135,163 @@
                 <p data-i18n="alloy_section.result_composition"><strong>Composition:</strong> <span id="alloyComposition">-</span></p>
             </div>
         </div>
+
+        <button id="openFeedbackBtn" class="btn" data-i18n="feedback.openButton">
+            Send a message
+        </button>
+
+        <dialog id="feedbackModal" class="feedback-modal" aria-labelledby="feedbackTitle">
+        <form method="dialog" class="modal-header">
+            <h2 id="feedbackTitle" data-i18n="feedback.title">Questions or Suggestions</h2>
+            <button class="modal-close" aria-label="Close" title="Close">×</button>
+        </form>
+
+        <p class="modal-subtitle" data-i18n="feedback.subtitle">How would you like to send it?</p>
+
+        <!-- Formulário visível por padrão -->
+        <form id="feedbackForm" action="https://formspree.io/f/movlrvjq" method="POST" class="feedback-form" novalidate>
+            <label class="field">
+            <span data-i18n="feedback.form.email">Your email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+            <small class="field-error" data-i18n="feedback.form.errors.email" hidden>Please enter a valid email.</small>
+            </label>
+
+            <label class="field">
+            <span data-i18n="feedback.form.topic">Topic</span>
+            <select name="topic" required>
+                <option value="" selected disabled data-i18n="feedback.form.topics._select">Select…</option>
+                <option value="question" data-i18n="feedback.form.topics.question">Question</option>
+                <option value="suggestion" data-i18n="feedback.form.topics.suggestion">Suggestion</option>
+                <option value="bug" data-i18n="feedback.form.topics.bug">Bug</option>
+                <option value="translation" data-i18n="feedback.form.topics.translation">Translation</option>
+            </select>
+            <small class="field-error" data-i18n="feedback.form.errors.topic" hidden>Please choose a topic.</small>
+            </label>
+
+            <label class="field">
+            <span data-i18n="feedback.form.message">Message</span>
+            <textarea name="message" rows="5" required></textarea>
+            <small class="field-error" data-i18n="feedback.form.errors.message" hidden>Please write your message.</small>
+            </label>
+
+            <!-- Anti-spam + contexto -->
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="page_lang" id="feedbackLang">
+            <input type="hidden" name="app_version" id="feedbackVersion" value="">
+
+            <div class="form-actions">
+            <button type="submit" class="btn" data-i18n="feedback.form.send">Send</button>
+            <button type="button" class="btn btn-outline" id="cancelFormBtn" data-i18n="feedback.form.cancel">Cancel</button>
+            </div>
+
+            <p id="feedbackStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- placeholders invisíveis para textos dinâmicos já traduzidos -->
+        <p id="i18n_sending" class="visually-hidden" data-i18n="feedback.form.sending">Sending…</p>
+        <p id="i18n_success" class="visually-hidden" data-i18n="feedback.form.success">Thanks! Received successfully.</p>
+        <p id="i18n_error"   class="visually-hidden" data-i18n="feedback.form.error">Oops, something went wrong. Please try again later.</p>
+        </dialog>
     </div>
+
+    <script>
+        (function () {
+            const $ = (s) => document.querySelector(s);
+            const modal = $('#feedbackModal');
+            const openBtn = $('#openFeedbackBtn');
+            const closeBtn = modal?.querySelector('.modal-close');
+            const form = $('#feedbackForm');
+            const cancelFormBtn = $('#cancelFormBtn');
+            const statusEl = $('#feedbackStatus');
+            const langEl = $('#feedbackLang');
+            const versionEl = $('#feedbackVersion');
+
+            // textos já traduzidos (seu script de i18n preencherá esses elementos)
+            const T = {
+                sending: $('#i18n_sending'),
+                success: $('#i18n_success'),
+                error: $('#i18n_error')
+            };
+
+            // set context
+            try {
+                langEl.value = document.documentElement.lang || (window.currentLanguage || 'en');
+                versionEl.value = (window.APP_VERSION || '');
+            } catch (e) { }
+
+            // abrir/fechar modal
+            openBtn?.addEventListener('click', () => {
+                if (typeof modal.showModal === 'function') modal.showModal();
+                else modal.setAttribute('open', '');
+                // limpar status/erros ao abrir
+                clearStatus();
+                clearErrors();
+                form.reset();
+            });
+            closeBtn?.addEventListener('click', () => modal.close());
+            modal?.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
+            cancelFormBtn?.addEventListener('click', () => { form.reset(); clearStatus(); clearErrors(); modal.close(); });
+
+            // validação de campos (HTML5 + mensagens)
+            form?.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                clearStatus();
+                clearErrors();
+
+                const email = form.elements['email'];
+                const topic = form.elements['topic'];
+                const message = form.elements['message'];
+
+                let valid = true;
+
+                // e-mail
+                if (!email.value || !email.checkValidity()) {
+                    showError(email, email.closest('.field')?.querySelector('.field-error'));
+                    valid = false;
+                }
+                // tópico
+                if (!topic.value) {
+                    showError(topic, topic.closest('.field')?.querySelector('.field-error'));
+                    valid = false;
+                }
+                // mensagem
+                if (!message.value || !message.value.trim()) {
+                    showError(message, message.closest('.field')?.querySelector('.field-error'));
+                    valid = false;
+                }
+
+                if (!valid) return;
+
+                setStatus(T.sending?.textContent || 'Sending…');
+                try {
+                    const r = await fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: new FormData(form)
+                    });
+                    if (r.ok) {
+                        form.reset();
+                        setStatus(T.success?.textContent || 'Success.');
+                    } else {
+                        setStatus(T.error?.textContent || 'Error.');
+                    }
+                } catch {
+                    setStatus(T.error?.textContent || 'Error.');
+                }
+            });
+
+            function setStatus(text) { if (statusEl) statusEl.textContent = text; }
+            function clearStatus() { if (statusEl) statusEl.textContent = ''; }
+            function showError(input, errorEl) {
+                input?.classList.add('field-invalid');
+                if (errorEl) errorEl.hidden = false;
+            }
+            function clearErrors() {
+                form.querySelectorAll('.field-invalid').forEach(el => el.classList.remove('field-invalid'));
+                form.querySelectorAll('.field-error').forEach(el => el.hidden = true);
+            }
+        })();
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

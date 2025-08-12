@@ -35,5 +35,33 @@
         "error_message": "Please enter at least two different ingot values to create an alloy.",
         "result_total": "<strong>Total Ingots:</strong> <span id='totalIngots'>0</span>",
         "result_composition": "<strong>Composition:</strong> <span id='alloyComposition'>-</span>"
+    },
+    "feedback": {
+        "openButton": "Send a message",
+        "title": "Questions or Suggestions",
+        "subtitle": "Fill in the form below and we’ll get back to you.",
+        "viaForm": "Send via form (email)",
+        "form": {
+            "email": "Your email",
+            "topic": "Topic",
+            "topics": {
+                "_select": "Select…",
+                "question": "Question",
+                "suggestion": "Suggestion",
+                "bug": "Bug",
+                "translation": "Translation"
+            },
+            "message": "Message",
+            "send": "Send",
+            "cancel": "Cancel",
+            "sending": "Sending…",
+            "success": "Thanks! Received successfully.",
+            "error": "Oops, something went wrong. Please try again later.",
+            "errors": {
+                "email": "Please enter a valid email.",
+                "topic": "Please choose a topic.",
+                "message": "Please write your message."
+            }
+        }
     }
 }
