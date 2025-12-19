@@ -18,9 +18,9 @@
                         Language <span class="globe">🌐</span>
                     </button>
                     <ul class="language-options">
-                        <li data-lang="en_us">English</li>
-                        <li data-lang="pt_br">Português</li>
-                        <li data-lang="es_es">Español</li>
+                        <li data-lang="en_us"><span>English</span><img class="flag" src="img/flags/us.svg" alt="USA flag"></li>
+                        <li data-lang="pt_br"><span>Português</span><img class="flag" src="img/flags/br.svg" alt="Brasil bandeira"></li>
+                        <li data-lang="es_es"><span>Español</span><img class="flag" src="img/flags/es.svg" alt="Bandera de España"></li>
                     </ul>
                 </div>
                 <button id="howToUseBtn" class="tutorial-btn" data-i18n="tutorial.tutorial_btn">How to Use</button>
@@ -318,9 +318,11 @@
 
             langOptions.forEach(option => {
                 option.addEventListener("click", (event) => {
-                    const selectedLang = event.target.dataset.lang;
-                    loadLanguage(selectedLang);
-                    langDropdown.classList.remove("open");
+                    const selectedLang = event.currentTarget?.dataset?.lang;
+                    if (selectedLang) {
+                        loadLanguage(selectedLang);
+                        langDropdown.classList.remove("open");
+                    }
                 });
             });
 
